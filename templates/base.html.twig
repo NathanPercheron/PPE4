@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+
+{% block stylesheets %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+{% endblock %}
+
+  {% block javascripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  {% endblock %}
+
+    </head>
+    {% if  app.user %}
+<!-- Profil Navbar -->
+<ul id="slide-out" class="sidenav">
+<li><div class="user-view">
+<div class="background">
+  <img src="https://zupimages.net/up/19/07/sikq.jpg">
+</div>
+<a href="#"><img class="circle" src=""></a>
+<a href="#"><span class="white-text name">{{ app.user.username }} {{ app.user.nom }}</span></a>
+<a href="#"><span class="white-text email">{{ app.user.email }}</span></a>
+</div></li>
+<li><a href="{{path('show_profil')}}"><i class="material-icons">account_box</i>Votre profil</a></li>
+<li><a href="#"><i class="material-icons">shopping_cart</i>Vos packs</a></li>
+{% if app.user.username == "Nathan" %}
+<li><a href="{{path('ajout_pack_service')}}"><i class="material-icons">add_circle</i>Créer packs et services</a></li>
+{% endif %}
+<li><div class="divider"></div></li>
+<li><a href="{{ path ('security_logout') }}" class="waves-effect waves-dark btn red lighten-1">
+<i class="material-icons right">assignment_ind</i>Déconnexion</a></li>
+</ul>
+{% endif %}
+
+<nav>
+<div class="nav-wrapper blue-grey darken-4">
+
+        <a class="brand-logo" href="{{path('accueil')}}">Concièrgerie</a>
+        <a class="sidenav-trigger" data-target="mobile-demo" href="#">
+            <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+<li>
+    <a class="waves-effect waves-light btn" href="{{path('pack_service')}}">
+<i class="material-icons left">redeem</i>Nos Packs</a>
+</li>
+{% if not app.user %}
+  <li>
+    <a class="waves-effect waves-light" href="{{path('security_connexion')}}">
+      <i class="material-icons left">account_box</i>Connexion</a>
+    </li>
+    <li>
+      <a class="waves-effect waves-light" href="{{path('security_inscription')}}">
+      <i class="material-icons left">assignment</i>Inscription</a>
+      </li>
+      {% else %}
+<li data-target="slide-out" class="sidenav-trigger">
+  <a href="#">
+    <i class="material-icons right">dashboard</i>Bienvenue {{ app.user.username }}</a></li>
+{% endif %}
+
+<script>
+$(".dropdown-trigger").dropdown();
+
+<!-- Initialisation Sidnav  -->
+$(document).ready(function(){
+   $('.sidenav').sidenav({
+     edge: 'right'
+
+   });
+ });
+</script>
+        </ul>
+    </div>
+</nav>
+    <body>
+        {% block body %}{% endblock %}
+
+
+
+    </body>
+</html>

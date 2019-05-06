@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conciergerie - Accueil{% endblock %}
+
+{% block body %}
+
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="https://zupimages.net/up/19/04/dpwl.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Vous aimez le cinéma ?</h3>
+          <h5 class="light grey-text text-lighten-3">Nous vous proposons un services premium</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://zupimages.net/up/19/11/n72q.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Des cours de cuisine à la maison</h3>
+          <h5 class="light grey-text text-lighten-3">Apprenez à cuisiner comme un chef</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://zupimages.net/up/19/11/msok.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Garde d'enfants</h3>
+          <h5 class="light grey-text text-lighten-3">Des personnes agées pour s'occuper de vos enfants</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://zupimages.net/up/19/11/p5p7.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Un service de ménage professionnel</h3>
+          <h5 class="light grey-text text-lighten-3">Vous n'aurez plus à vous souciez de la poussière</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <h3 class="text center">Bienvenue dans notre conciergerie</h3>
+  <h5 class="text center">Ci dessous vous retrouverez nos packs</h5>
+    <p class="text center">*Veuillez vous connecter pour pouvoir choisir un pack.</p>
+
+          <div class="container">
+            <div class="row">
+      <div class="col s12">
+      <h1 class="center text">Les packs</h1>
+      </div>
+      <div class="col s4">
+       <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="https://zupimages.net/up/19/11/quuu.jpg">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Pack Professionnel<i class="material-icons right">more_vert</i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Pack Professionnel<i class="material-icons right">close</i></span>
+      <p>Le pack professionnel vous propose différents service lié à votre travail</p>
+    </div>
+  </div>
+      </div>
+      <div class="col s4">
+             <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="https://zupimages.net/up/19/11/irq7.jpg">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Pack Famille<i class="material-icons right">more_vert</i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Pack Famille<i class="material-icons right">close</i></span>
+      <p>Le pack famille vous propose pleins d'activitées qui plairas à vos enfants ou qui vous permettrons de vous occuper plus de vos enfants que des tâches ménagère par exemple</p>
+    </div>
+  </div>
+
+      </div>
+      <div class="col s4">
+             <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="https://zupimages.net/up/19/11/tbud.jpg" width="100">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Pack Solo<i class="material-icons right">more_vert</i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Pack Solo<i class="material-icons right">close</i></span>
+      <p>Ne déprimez pas ! nous sommes la pour vous et nous vous proposons des services qui vous ferons faire de nouvelle rencontre</p>
+    </div>
+  </div>
+
+      </div>
+    </div>
+      </div>
+
+     
+
+  <script>
+    $(document).ready(function(){
+    $('.slider').slider();
+  });
+  </script>
+
+{% endblock %}

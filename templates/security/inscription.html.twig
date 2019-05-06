@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conciergerie - Inscription{% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <div class="row">
+<div class="col s12">
+<h1>Conciergerie inscription</h1>
+</div>
+<div class="col s6"></div>
+<div class="col s6">
+  {{ form_start(form) }}
+  <div class="row">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          {{ form_label(form.username, 'Prénom') }}
+          {{ form_widget(form.username, {'attr':{'class':'validate'}}) }}
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          {{ form_label(form.nom) }}
+          {{ form_widget(form.nom, {'attr':{'class':'validate'}}) }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">locked</i>
+          {{ form_label(form.password, 'Mot de passe') }}
+          {{ form_widget(form.password, {'attr':{'class':'validate'}}) }}
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">locked</i>
+          {{ form_label(form.confirm_password, 'Confirmez le mot de passe') }}
+          {{ form_widget(form.confirm_password, {'attr':{'class':'validate'}}) }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">email</i>
+          {{ form_label(form.email) }}
+          {{ form_widget(form.email, {'attr':{'class':'validate'}}) }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">home</i>
+          {{ form_label(form.statut) }}
+          {{ form_widget(form.statut, {'attr':{'class':'validate'}}) }}
+        </div>
+      </div>
+      </div>
+      <div class="input-field col s12">
+      <button class="btn waves-effect waves-light light-blue darken-4"
+      type="submit" name="action">Inscription
+        <i class="material-icons right">send</i>
+        </button>
+      </div>
+  </div>
+  {{ form_end(form) }}
+</div>
+
+
+
+{% endblock %}

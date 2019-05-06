@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conciergerie - Packs de services{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+<div class="col s12">
+<h1 class="text center">Veuillez choisir un pack</h1>
+  <div class="row">
+    <div class="col s12">
+    {% for LePacks in lespacks %}
+      <div class="card">
+        <div class="card-image">
+          <img src="">
+          <span class="card-title">{{LePacks.libellepack}}</span>
+        </div>
+        <div class="card-content">
+          <p>{{LePacks.libellepack}}</p>
+        </div>
+        {% if app.user.roles == "ROLE_USER" %}
+        <div class="card-action">
+          <a class="waves-effect waves-light btn blue-grey darken-3" href="{{path('service_pack', {'id' : LePacks.id})}}">{{LePacks.libellepack}}</a>
+        </div>
+        {% endif %}
+        <div class="card-action">
+          <a class="waves-effect waves-danger btn green darken-3" data-id="{{LePacks.id}}" href="{{path('update_pack', {'id' : LePacks.id})}}">Editer</a>
+        </div>
+        <div class="card-action">
+          <a class="waves-effect waves-danger btn red darken-4" data-id="{{LePacks.id}}" href="{{path('delete_pack', {'id' : LePacks.id})}}">Supprimer</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+{% endblock %}

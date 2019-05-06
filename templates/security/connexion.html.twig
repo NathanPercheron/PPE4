@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title %}Conciergerie - Connexion{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="TextType center">Connexion</h1>
+    <form action="{{ path('security_connexion') }}" method="post">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">email</i>
+                <input class="validate" id="email" name="_username" required type="email">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">locked</i>
+                    <input class="validate" id="password" name="_password" required type="password">
+                        <label for="password">Mot de passe</label>
+                    </div>
+                </div>
+                <div class="input-field col s12">
+                    <button class="btn waves-effect waves-light light-blue darken-4" name="action" type="submit">Connexion
+                        <i class="material-icons right">check</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    
+
+{% endblock %}

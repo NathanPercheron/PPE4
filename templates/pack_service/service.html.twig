@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conciergerie - Packs de services{% endblock %}
+
+{% block body %}
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+        <li class="tab col s3"><a href="#test1">Les services</a></li>
+      </ul>
+    </div>
+    <div id="test1" class="col s12">
+          <table>
+        <thead>
+          <tr>
+              <th>Nom du service</th>
+              <th>Partenaires</th>
+              <th>Action</th>
+          </tr>
+        </thead>
+        {% for LeService in lesservices %}
+        {% for LeService2 in LeService.LesServices %}
+        {% for LeService3 in LeService2.partenaires %}
+        <tbody>
+          <tr>
+            <td>{{LeService2.LibelleService}}</td>
+            <td>{{LeService3.LibellePartenaire}}</td>
+            <td>
+            <div class="card-action">
+                <a class="waves-effect waves-light btn" href="#">Ajouter le service</a>
+            </div>
+            </td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        {% endfor %}
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<script>
+  $(document).ready(function(){
+    $('.tabs').tabs();
+  });
+</script>
+
+{% endblock %}
